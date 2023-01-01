@@ -1,13 +1,20 @@
 ﻿using System;
+using System.Diagnostics;
+
 namespace ChristmasWithTypes
 {
-    public class Christmas
+    [DebuggerDisplay($"{{{nameof(GetDebuggerDisplay)}(),nq}}")]
+    public partial class Christmas
     {
         public string[] Presents;
         public string Santa { get; set; }
         public int? TreeHeight { get; set; } //TODO Make the Height property nullable
-            T
-        //TODO Make the property, "Day", type enum
+            
     public enum Day { Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday/*Fill out the days of the week*/ };
+
+        private string GetDebuggerDisplay()
+        {
+            return ToString();
+        }
     }
 }
